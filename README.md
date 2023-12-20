@@ -79,6 +79,6 @@ class _ShowImagesScreenState extends State<ShowImagesScreen> {
 Para instalar este proyecto, sigue estos pasos:
 
 
-git clone https://github.com/tu-usuario/mi-proyecto-flutter.git
+git clone https://github.com/joanhernandez-costa/tarea-flutter
 cd mi-proyecto-flutter
 flutter pub get
