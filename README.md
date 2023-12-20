@@ -1,7 +1,7 @@
 # Documentación del Proyecto Flutter
 
 ## Introducción
-Este proyecto de Flutter incluye varias pantallas y funcionalidades para crear una aplicación interactiva.
+Este proyecto de Flutter incluye varias pantallas y funcionalidades clave para la creación de una aplicación interactiva.
 
 ## Estructura del Proyecto
 El proyecto se compone de las siguientes clases y pantallas:
@@ -37,13 +37,48 @@ void main() async {
 class MainApp extends StatelessWidget {
   // ... implementación de MainApp ...
 }
+```
 
+### SettingsScreen
+Pantalla para ajustar configuraciones del juego.
+
+```dart
+class _SettingsScreenState extends State<SettingsScreen> {
+  final TextEditingController _textController = TextEditingController();
+
+  int _timeLimitSegment = 0;
+  int _numberOfCardsSegment = 0;
+  int _cardTimeSegment = 0;
+
+  final List<num> _timeLimits = [15, 30, 60];
+  final List<num> _numberOfCards = [6, 9, 12];
+  final List<num> _cardTimes = [1, 2, 3];
+}
+```
+
+### ShowImagesScreen
+Muestra imágenes en una secuencia determinada.
+
+```dart
+class _ShowImagesScreenState extends State<ShowImagesScreen> {
+  void _cambiarImagen() {
+    setState(() {
+      if (_imageIndexToShow < numberOfCards - 1) {
+        _imageIndexToShow++;
+      } else {
+        time.stopTimer();
+        Navigation.replaceScreen(context, const ChooseImagesScreen());
+      }
+    });
+  }
+}
+```
 
 ## Instalación
 
 Para instalar este proyecto, sigue estos pasos:
 
-```bash
+
 git clone https://github.com/tu-usuario/mi-proyecto-flutter.git
 cd mi-proyecto-flutter
 flutter pub get
